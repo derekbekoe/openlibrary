@@ -318,7 +318,7 @@ class random_book(delegate.page):
     def GET(self):
         olid = lending.get_random_available_ia_edition()
         if olid:
-            raise web.seeother('/books/%s' % olid)
+            raise web.seeother('http://localhost' + '/books/%s' % olid)
         raise web.seeother("/")
 
 

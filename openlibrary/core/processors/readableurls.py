@@ -49,7 +49,7 @@ class ReadableUrlProcessor:
         #@@ take care of that case here till that is fixed.
         # @@ Also, the redirection must be done only for GET requests.
         if readable_path != web.ctx.path and readable_path != urllib.parse.quote(web.safestr(web.ctx.path)) and web.ctx.method == "GET":
-            raise web.redirect(web.safeunicode(readable_path) + web.safeunicode(web.ctx.query))
+            raise web.redirect('http://localhost' + web.safeunicode(readable_path) + web.safeunicode(web.ctx.query))
 
         web.ctx.readable_path = readable_path
         web.ctx.path = real_path
